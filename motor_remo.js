@@ -45,10 +45,10 @@ async function setMotor(L_motor, R_motor){ //値は0.0~1.0
         await pca9685pwm.setPWM(3,0);
 	}
 	*/
-	await pca9685pwm.setPWM(0, 0);
-	await pca9685pwm.setPWM(1, L_motor);
-	await pca9685pwm.setPWM(2, 0);
-	await pca9685pwm.setPWM(3, R_motor);
+	await pca9685pwm.setPWM(0, L_motor);
+	await pca9685pwm.setPWM(1, 0);
+	await pca9685pwm.setPWM(2, R_motor);
+	await pca9685pwm.setPWM(3, 0);
 }
 
 
