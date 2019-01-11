@@ -10,7 +10,7 @@ var passSec = 0;
 var score = 0;
 var typStart,typEnd;
 
-const ws = new WebSocket("wss://4191333.xyz:3052/?room=po");
+const ws = new WebSocket("wss://4191333.xyz:3052/?room=po_mato");
 
 function ransu(){
   for ( var i = 0 ; i < 1000 ; i++ )
