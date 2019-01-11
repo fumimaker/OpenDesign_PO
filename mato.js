@@ -81,16 +81,16 @@ ws.onmessage = (message) => {
         speed(0.0);
     }
     else if(val > 1.5){
-        speed(0.2);
+        speed(0.1);
     }
     else if(val > 1.0){
-        speed(0.4);
+        speed(0.2);
     }
     else if(val > 0.8){
-        speed(0.6);
+        speed(0.3);
     }
     else if (val > 0.5) {
-        speed(0.8);
+        speed(0.5);
     }
     else{
         speed(1.0);
