@@ -1,6 +1,8 @@
 // Hブリッジモータードライバの二本の制御端子にそれぞれPCA9685のPWM信号を入力し正逆転と速度コントロールをします。
 var pca9685pwmPromise;
+
 const ws = new WebSocket("wss://4191333.xyz:3052/?room=po");
+
 onload =async function(){ // ポートを初期化するための非同期関数
 	try{
 		console.log("onload");
@@ -23,8 +25,9 @@ async function speed(speedVal){
 }
 
 
-async function setMotor(){
+async function setMotor(L_motor, R_motor){ //値は0.0~1.0
 	var pca9685pwm = await pca9685pwmPromise;
+	/*
 	if ( direction == 1 ){
 		await pca9685pwm.setPWM(0,0);
         await pca9685pwm.setPWM(1,ratio);
@@ -41,6 +44,11 @@ async function setMotor(){
         await pca9685pwm.setPWM(2,0);
         await pca9685pwm.setPWM(3,0);
 	}
+	*/
+	await pca9685pwm.setPWM(0, 0);
+	await pca9685pwm.setPWM(1, L_motor);
+	await pca9685pwm.setPWM(2, 0);
+	await pca9685pwm.setPWM(3, R_motor);
 }
 
 
@@ -59,9 +67,6 @@ async function rev(){
 	await setMotor();
 }
 
-async function motor_R(){
-    
-}
 
 // 単に指定したms秒スリープするだけの非同期処理関数
 // この関数の定義方法はとりあえず気にしなくて良いです。コピペしてください。

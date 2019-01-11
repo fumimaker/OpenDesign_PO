@@ -74,6 +74,15 @@ function sleep(ms){
 ws.onmessage = (message) => {
     mes.innerHTML += message.data + "<br>";
     if (message.data == "1"){
-        
-    }
+		await setMotor(0.2, 0.2);
+	}
+	if ( message.data == "2" ){
+		await setMotor(0, 0);
+	}
+	if (message.data == "3") {
+		await setMotor(0.2, 0);
+	}
+	if (message.data == "4") {
+		await setMotor(0, 0.2);
+	}
 }
