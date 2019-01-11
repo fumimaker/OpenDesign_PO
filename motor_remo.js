@@ -78,19 +78,19 @@ function sleep(ms){
 
 ws.onmessage = (message) => {
 	if (message.data == "1") {
-		await setMotor(0.2, 0.2);
+		setMotor(0.2, 0.2);
 		console.log("setMotor(0.2, 0.2)");
 	}
 	if (message.data == "2") {
-		await setMotor(0, 0);
+		setMotor(0, 0);
 		console.log("setMotor(0, 0)");
 	}
 	if (message.data == "3") {
-		await setMotor(0.2, 0);
+		setMotor(0.2, 0);
 		console.log("setMotor(0.2, 0)");
 	}
 	if (message.data == "4") {
-		await setMotor(0, 0.2);
+		setMotor(0, 0.2);
 		console.log("setMotor(0, 0.2)");
 	}
 }
