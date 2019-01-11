@@ -97,11 +97,11 @@ ws.onmessage = (message) => {
     }
 
     if(times < 3){
-        await fwd();
+        fwd();
         times++;
     }
     else if(times < 6){
-        await rev();
+        rev();
         times++;
     }
     else{
