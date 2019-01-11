@@ -72,5 +72,5 @@ function sleep(ms){
 }
 
 ws.onmessage = (message) => {
-    console.log(messagee.data);
+    console.log(message.data);
 }
