@@ -87,10 +87,10 @@ ws.onmessage = (message) => {
 	}
 	if (message.data == "3") {
 		setMotor(0.2, 0);
-		console.log("setMotor(0.2, 0)");
+		console.log("setMotor(0.2, 0.1)");
 	}
 	if (message.data == "4") {
 		setMotor(0, 0.2);
-		console.log("setMotor(0, 0.2)");
+		console.log("setMotor(0.1, 0.2)");
 	}
 }
