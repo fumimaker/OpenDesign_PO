@@ -59,9 +59,7 @@ async function rev(){
 	await setMotor();
 }
 
-async function motor_R(){
-    
-}
+
 
 // 単に指定したms秒スリープするだけの非同期処理関数
 // この関数の定義方法はとりあえず気にしなくて良いです。コピペしてください。
