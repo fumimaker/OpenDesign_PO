@@ -2,6 +2,7 @@
 var pca9685pwmPromise;
 
 const ws = new WebSocket("wss://4191333.xyz:3052/?room=po_mato");
+var times = 0;
 
 onload = async function () { // ポートを初期化するための非同期関数
     try {
@@ -25,9 +26,9 @@ async function speed(speedVal) {
 }
 
 
-async function setMotor(L_motor, R_motor) { //値は0.0~1.0
+async function setMotor() { //値は0.0~1.0
     var pca9685pwm = await pca9685pwmPromise;
-	/*
+    
 	if ( direction == 1 ){
 		await pca9685pwm.setPWM(0,0);
         await pca9685pwm.setPWM(1,ratio);
@@ -44,11 +45,7 @@ async function setMotor(L_motor, R_motor) { //値は0.0~1.0
         await pca9685pwm.setPWM(2,0);
         await pca9685pwm.setPWM(3,0);
 	}
-	*/
-    await pca9685pwm.setPWM(0, L_motor);
-    await pca9685pwm.setPWM(1, 0);
-    await pca9685pwm.setPWM(2, R_motor);
-    await pca9685pwm.setPWM(3, 0);
+	
 }
 
 
@@ -77,20 +74,38 @@ function sleep(ms) {
 }
 
 ws.onmessage = (message) => {
-    if (message.data == "1") {
-        setMotor(0.3, 0.3);
-        console.log("setMotor(0.2, 0.2)");
+
+    var val = message.data;
+
+    if(val > 2.0){
+        speed(0.0);
     }
-    if (message.data == "2") {
-        setMotor(0, 0);
-        console.log("setMotor(0, 0)");
+    else if(val > 1.5){
+        speed(0.2);
     }
-    if (message.data == "3") {
-        setMotor(0.3, 0.2);
-        console.log("setMotor(0.2, 0.1)");
+    else if(val > 1.0){
+        speed(0.4);
     }
-    if (message.data == "4") {
-        setMotor(0.2, 0.3);
-        console.log("setMotor(0.1, 0.2)");
+    else if(val > 0.8){
+        speed(0.6);
     }
+    else if (val > 0.5) {
+        speed(0.8);
+    }
+    else{
+        speed(1.0);
+    }
+
+    if(times < 3){
+        await fwd();
+        times++;
+    }
+    else if(times < 6){
+        await rev();
+        times++;
+    }
+    else{
+        times = 0;
+    }
+    console.log(val);
 }
