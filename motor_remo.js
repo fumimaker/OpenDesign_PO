@@ -46,7 +46,7 @@ async function setMotor(L_motor, R_motor){ //値は0.0~1.0
 	}
 	*/
 	await pca9685pwm.setPWM(0, L_motor);
-	await pca9685pwm.setPWM(1, 0);
+	await pca9685pwm.setPWM(1, );
 	await pca9685pwm.setPWM(2, R_motor);
 	await pca9685pwm.setPWM(3, 0);
 }
@@ -86,11 +86,11 @@ ws.onmessage = (message) => {
 		console.log("setMotor(0, 0)");
 	}
 	if (message.data == "3") {
-		setMotor(1, 0.5);
-		console.log("setMotor(0.2, 0.1)");
+		setMotor(0, 1);
+		console.log("setMotor(0.2, 0)");
 	}
 	if (message.data == "4") {
-		setMotor(0.5, 1);
-		console.log("setMotor(0.1, 0.2)");
+		setMotor(1, 0);
+		console.log("setMotor(0, 0.2)");
 	}
 }
