@@ -96,6 +96,10 @@ ws.onmessage = (message) => {
         speed(0.5);
     }
 
+    if(val == 0){
+        speed(0.0);
+    }
+
     if(times < 3){
         fwd();
         times++;
