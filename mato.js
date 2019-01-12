@@ -99,11 +99,11 @@ ws.onmessage = (message) => {
         speed(0.0);
     }
 
-    if(times < 3){
+    if(times < 2){
         fwd();
         times++;
     }
-    else if(times < 6){
+    else if(times < 4){
         rev();
         times++;
     }

@@ -86,11 +86,11 @@ ws.onmessage = (message) => {
 		console.log("setMotor(0, 0)");
 	}
 	if (message.data == "3") {
-		setMotor(0, 1);
+		setMotor(0.2, 1);
 		console.log("setMotor(0.2, 0)");
 	}
 	if (message.data == "4") {
-		setMotor(1, 0);
+		setMotor(1, 0.2);
 		console.log("setMotor(0, 0.2)");
 	}
 }
