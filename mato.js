@@ -107,6 +107,7 @@ ws.onmessage = (message) => {
     else if(times < 6){
         rev();
         times++;
+    }
     else{
         times = 0;
     }
