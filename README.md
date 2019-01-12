@@ -9,6 +9,6 @@
 - マトの車がパソコンのタイピングゲームでのスコアに応じて速度が変化する様子
     - タイピング速度が早いほどマトが動く速度が低下しラジコン車をマトに当てやすくなります．逆にタイピングが遅いとマトが早くなり当たりにくくなります．頑張って早くタイピングをして当てやすくしましょう．
 ![mato](https://github.com/fumimaker/OpenDesign_PO/blob/master/img/mato.JPG)
-
+![radicon](https://github.com/fumimaker/OpenDesign_PO/blob/master/img/radicon.JPG)
 ### Back side story
 当たり前のように一人フェードアウトするのやばい...ほとんどワンオペでここ一週間日が変わるまで学校いるレベルの作業量は相当きつかったです．
