@@ -77,23 +77,23 @@ ws.onmessage = (message) => {
 
     var val = message.data;
 
-    if(val > 2.0){
+    if(val > 3.0){
         speed(0.0);
     }
+    else if(val > 2.0){
+        speed(0.3);
+    }
     else if(val > 1.5){
-        speed(0.05);
+        speed(0.5);
     }
-    else if(val > 1.0){
-        speed(0.1);
+    else if(val > 1.2){
+        speed(0.7);
     }
-    else if(val > 0.8){
-        speed(0.2);
-    }
-    else if (val > 0.5) {
-        speed(0.4);
+    else if (val > 1.0) {
+        speed(0.8);
     }
     else{
-        speed(0.5);
+        speed(1.0);
     }
 
     if(val == 0){
@@ -107,7 +107,6 @@ ws.onmessage = (message) => {
     else if(times < 6){
         rev();
         times++;
-    }
     else{
         times = 0;
     }
