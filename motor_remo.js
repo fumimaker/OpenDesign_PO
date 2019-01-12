@@ -78,7 +78,7 @@ function sleep(ms){
 
 ws.onmessage = (message) => {
 	if (message.data == "1") {
-		setMotor(0.3, 0.3);
+		setMotor(1, 1);
 		console.log("setMotor(0.2, 0.2)");
 	}
 	if (message.data == "2") {
@@ -86,11 +86,11 @@ ws.onmessage = (message) => {
 		console.log("setMotor(0, 0)");
 	}
 	if (message.data == "3") {
-		setMotor(0.3, 0.2);
+		setMotor(1, 0.5);
 		console.log("setMotor(0.2, 0.1)");
 	}
 	if (message.data == "4") {
-		setMotor(0.2, 0.3);
+		setMotor(0.5, 1);
 		console.log("setMotor(0.1, 0.2)");
 	}
 }

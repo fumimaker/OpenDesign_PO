@@ -95,7 +95,6 @@ ws.onmessage = (message) => {
     else{
         speed(1.0);
     }
-
     if(val == 0){
         speed(0.0);
     }
